@@ -1,0 +1,31 @@
+<!--
+Name: Niraj Gopani
+Student Number: 301159058
+-->
+
+<% include ./partials/header.ejs %>
+
+<div>
+  <div class="up-slide-view">
+    <div class="container">
+      <h2 style="color: black"><%= title %></h2>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
+      </ol>
+    </div>
+  </div>
+  <div class="container">
+
+    <% if (title == "Services") { %> <% include ./partials/v_services.ejs %> <% } %>
+
+    <% if (title == "Home") { %> <% include ./partials/v_missionstatement.ejs %> <% } %>
+
+    <% if (title == "About Me") { %> <% include ./partials/v_aboutme.ejs %> <% } %>
+
+    <% if (title == "Projects") { %> <% include ./partials/v_projects.ejs %> <% } %> <% if (title == "Contact Me") { %> <% include
+    ./partials/contact_page.ejs %> <% } %>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

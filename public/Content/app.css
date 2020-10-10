@@ -1,0 +1,51 @@
+/* main color : #9accdb  */
+body {
+    background: #f6f5fa;
+    color: #322e46;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+}
+.nav-item a{
+    color: #000019;
+    font-weight: 500;
+    padding: 39px 10px;
+    display: block;
+    font-size: 16px;
+    text-transform: capitalize;
+    position: relative;
+    margin: 0 23px;
+    
+}
+
+a {
+    color: #322e46;
+    text-decoration: none;
+}
+a:hover{
+    color: #9accdb;
+    text-decoration: none;
+}
+.logo-img{
+    width: 90px;
+    height: 75px;
+}
+.contatiner{
+    max-width: 1100px;
+}
+.up-slide-view{
+    background-image: url(../Assets/FirstBackground.jpg);
+    min-height: 390px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.up-slide-view h2{
+    margin-left: 20px;
+    padding-top: 120px;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
