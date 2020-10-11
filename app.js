@@ -1,27 +1,27 @@
 //File: App.js
 //Name: Niraj gopani
 
-let createError = require('http-errors');
-let express = require('express');
+let createError = require('http-errors'); //for catching error use http-error package
+let express = require('express'); //use express for web app
 let path = require('path');
 
-let indexRouter = require('./routes/index');
+let indexRouter = require('./routes/index'); //create multiple route in one file
 
-let app = express();
+let app = express(); // call express
 
 
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); //add view part in express
+app.set('view engine', 'ejs'); // for view part used ejs template
 
-app.use(express.static('public'))
+app.use(express.static('public')) //public directory connect
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, 'public'))); //public directory connect
+app.use(express.static(path.join(__dirname, 'node_modules'))); //node_modules directory connect
 
-app.use('/', indexRouter);
+app.use('/', indexRouter); // call route for starting app
 
 
 
