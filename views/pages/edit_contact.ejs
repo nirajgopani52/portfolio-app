@@ -1,0 +1,39 @@
+<!--file name:header.ejs
+student name: NirajKumar Gopani
+student number: 301159058
+date:10-21-2020
+-->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 pb-3">
+      <h2 style="color: #322e46; padding: 30px 0px; text-align: center;">EDIT</h2>
+      <form action="/contact-list/<%= contact._id %>" method="POST">
+        <div class="form-group row">
+          <label for="name" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">Name:</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" value="<%= contact.name %>" id="name" name="name" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="emailId" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">E-mail:</label>
+          <div class="col-lg-9">
+            <input type="emailId" class="form-control" value="<%= contact.emailId %>" id="emailId" name="emailId" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="contact" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">Contact:</label>
+          <div class="col-lg-9">
+            <input type="number" class="form-control" value="<%= contact.contact %>" id="contact" name="contact" />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <input type="submit" class="btn btn-primary" value="Edit" style="color: bisque" />
+          <a href="/contact-list">
+            <input type="button" class="btn btn-secondary" value="Cancel" style="color: bisque" />
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

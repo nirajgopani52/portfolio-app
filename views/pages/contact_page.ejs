@@ -1,0 +1,50 @@
+<!--file name:header.ejs
+student name: NirajKumar Gopani
+student number: 301159058
+date:10-11-2020
+-->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 pb-3">
+      <h2 style="color: #322e46; padding: 30px 0px;">Please Enter your information here</h2>
+      <form action="/contact-list" method="POST">
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="nirajgopani89@gmail.com"
+              style="font-size: 25px; color: darkgray" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="firstName" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">First
+            name:</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" id="firstName" name="firstName" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lastName" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">Last
+            name:</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" id="lastName" name="lastName" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="emailID" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">E-mail:</label>
+          <div class="col-lg-9">
+            <input type="emailID" class="form-control" id="emailID" name="emailID" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="contact" class="col-lg-3 col-form-label font-weight-bold" style="font-size: 18px">Contact:</label>
+          <div class="col-lg-9">
+            <input type="number" class="form-control" id="contact" name="contact" />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <input type="submit" class="btn btn-primary" value="Submit" style="color: bisque" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

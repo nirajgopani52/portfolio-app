@@ -1,0 +1,40 @@
+<!--file name:header.ejs
+student name: NirajKumar Gopani
+student number: 301159058
+date:10-21-2020
+-->
+<div class="container" style="padding-top: 50px">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" width="10%">#</th>
+        <th scope="col" width="20%">Name</th>
+        <th scope="col" width="20%">Contact</th>
+        <th scope="col" width="30%">Email Id</th>
+        <th scope="col" width="20%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < contactList.length; i++) {%>
+      <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= contactList[i].name %></td>
+        <td><%= contactList[i].contact %></td>
+        <td><%= contactList[i].emailId %></td>
+        <td>
+          <a href="/contact-list/<%= contactList[i]._id %>">
+            <button type="button" class="btn btn-secondary mr-3">
+              Edit
+            </button>
+          </a>
+          <a href="/contact-list/delete/<%= contactList[i]._id %>">
+            <button type="button" class="btn btn-danger">
+              Delete
+            </button>
+          </a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

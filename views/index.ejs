@@ -1,32 +1,41 @@
 <!--file name:index.ejs
-student name: Nirajumar Gopani
+student name: NirajKumar Gopani
 student number: 301159058
 date:10-11-2020
 -->
 
-<% include ./partials/header.ejs %>
+<% include ./pages/header.ejs %>
 
 <div>
+  <% if (title != "LogIn" && title != "Contact List" && title != "Contact Edit") { %>
   <div class="up-slide-view">
     <div class="container">
       <h2 style="color: black"><%= title %></h2>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
       </ol>
     </div>
   </div>
+  <% } %>
   <div class="container">
-<!--take you to the different pages-->
-    <% if (title == "Services") { %> <% include ./partials/v_services.ejs %> <% } %>
+    <!--take you to the different pages-->
+    <% if (title == "Services") { %> <% include ./pages/v_services.ejs %> <% } %>
 
-    <% if (title == "Home") { %> <% include ./partials/v_missionstatement.ejs %> <% } %>
+    <% if (title == "Home") { %> <% include ./pages/v_missionstatement.ejs %> <% } %>
 
-    <% if (title == "About Me") { %> <% include ./partials/v_aboutme.ejs %> <% } %>
+    <% if (title == "About Me") { %> <% include ./pages/v_aboutme.ejs %> <% } %>
 
-    <% if (title == "Projects") { %> <% include ./partials/v_projects.ejs %> <% } %> <% if (title == "Contact Me") { %> <% include
-    ./partials/contact_page.ejs %> <% } %>
+    <% if (title == "Projects") { %> <% include ./pages/v_projects.ejs %> <% } %>
+
+    <% if (title == "Contact List") { %> <% include ./pages/contactList.ejs %> <% } %>
+
+    <% if (title == "Contact Edit") { %> <% include ./pages/edit_contact.ejs %> <% } %>
+
+    <% if (title == "Contact Me") { %> <% include ./pages/contact_page.ejs %> <% } %>
+
+    <% if (title == "LogIn") { %> <% include ./pages/login.ejs %> <% } %>
   </div>
 </div>
 
-<% include ./partials/footer.ejs %>
+<% include ./pages/footer.ejs %>
