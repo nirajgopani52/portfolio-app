@@ -14,7 +14,7 @@ var express = require('express')
   , session = require('express-session')
   , passport = require('passport') //for authentication
   , app = express();
-  
+  require("dotenv").config();
   require('./config/passport')(passport);
 
 const { redirectAuthenticated } = require("./config/auth")
@@ -84,8 +84,8 @@ server.on("listening", () => {
 });
 
 const url = 'mongodb://localhost:27017/portfolio-data'
-
-mongoose.connect(url,{useNewUrlParser:true}) //connection mongoDB with project
+console.log(process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true}) //connection mongoDB with project
 const db = mongoose.connection
 db.once('open', _ => {
   console.log('Database connected:', url)
