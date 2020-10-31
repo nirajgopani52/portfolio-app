@@ -3,7 +3,6 @@ student name: Nirajumar Gopani
 student number: 301159058
 date:10-11-2020
 */
-//File: App.js
 //Name: Niraj gopani
 var express = require('express')
   , mongoose = require('mongoose')
@@ -45,8 +44,8 @@ app.use("/contact-list", require('./routes/contact.js')) //handle bussiness cont
 app.post('/login', redirectAuthenticated, function(req, res, next) {
   console.log("LOGIN IN")
   passport.authenticate('local', {
-    successRedirect: '/contact-list',
-    failureRedirect: '/login',
+    successRedirect: '/contact-list', // alow user to access contact list
+    failureRedirect: '/login', //user is asked to login again
     failureFlash: true
   })(req, res, next)
 });
@@ -83,9 +82,9 @@ server.on("listening", () => {
   console.log("Listening on " + bind);
 });
 
-const url = 'mongodb://localhost:27017/portfolio-data'
-console.log(process.env.MONGODB_URL)
-mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true}) //connection mongoDB with project
+const url = 'mongodb+srv://niraj11:niraj111@mycluster.w4i8l.mongodb.net/portfolio?retryWrites=true&w=majority'
+console.log("URL ",process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGODB_URL || url,{useNewUrlParser:true}) //connection mongoDB with project
 const db = mongoose.connection
 db.once('open', _ => {
   console.log('Database connected:', url)
