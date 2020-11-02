@@ -12,7 +12,8 @@ var express = require('express')
   , engine = require('ejs-locals')
   , session = require('express-session')
   , passport = require('passport') //for authentication
-  , app = express();
+  , app = express()
+  , flash = require('connect-flash')
   require("dotenv").config();
   require('./config/passport')(passport);
 
@@ -24,6 +25,7 @@ app.set('views', path.join(__dirname, 'views')); //add view part in express
 app.set('view engine', 'ejs'); // for view part used ejs template
 app.use(express.static('public')) //public directory connect
 app.use(express.json());
+app.use(flash());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public'))); //public directory connect
 app.use(express.static(path.join(__dirname, 'node_modules'))); //node_modules directory connect
