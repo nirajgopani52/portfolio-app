@@ -19,6 +19,23 @@ var express = require('express')
 
 const { redirectAuthenticated } = require("./config/auth")
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
+const url = 'mongodb+srv://niraj11:niraj111@mycluster.w4i8l.mongodb.net/portfolio?retryWrites=true&w=majority'
+console.log("URL ",process.env.MONGODB_URL)
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true}) //connection mongoDB with project
+const db = mongoose.connection
+db.once('open', _ => {
+  console.log('Database connected:', url)
+})
+
+db.on('error', err => {
+  console.error('connection error:', err)
+})
+
+
 app.engine('ejs', engine);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views')); //add view part in express
@@ -84,14 +101,3 @@ server.on("listening", () => {
   console.log("Listening on " + bind);
 });
 
-const url = 'mongodb+srv://niraj11:niraj111@mycluster.w4i8l.mongodb.net/portfolio?retryWrites=true&w=majority'
-console.log("URL ",process.env.MONGODB_URL)
-mongoose.connect(process.env.MONGODB_URL || url,{useNewUrlParser:true}) //connection mongoDB with project
-const db = mongoose.connection
-db.once('open', _ => {
-  console.log('Database connected:', url)
-})
-
-db.on('error', err => {
-  console.error('connection error:', err)
-})
